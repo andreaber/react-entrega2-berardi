@@ -3,7 +3,7 @@
     font-family: 'Rubik', sans-serif;
 
     .header__container {
-        max-width: 1000px;
+        max-width: 1200px;
         margin: 0 auto;
         padding: 30px 0;
     
@@ -23,15 +23,30 @@
             
             .navbar__link {
                 color: white;
-                font-size: 16px;
+                font-size: 15px;
                 line-height: 18px;
                 font-weight: 400;
                 letter-spacing: 0.3;
                 text-transform: uppercase;
                 text-decoration: none;
                 cursor: pointer;
+
+                .navbar__link--dropdown {
+                    color:#232f3e;
+                }
             }
         }
+    }
+
+    .user {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+        color: white;
+        font-weight: 300;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 

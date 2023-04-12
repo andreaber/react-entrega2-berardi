@@ -1,17 +1,21 @@
-import { FaCartPlus } from 'react-icons/fa';
-import './CartWidget.scss'
-
+import { useContext } from "react";
+import { TiShoppingCart } from "react-icons/ti";
+import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
+import "./CartWidget.scss";
 
 const CartWidget = () => {
+  const { totalCantidad, cart } = useContext(CartContext);
 
-    return (  
-        <div className='cart-widget'>
-            {/* <img src={carrito} alt="cart"/> */}
-
-            <FaCartPlus className='cart-icon'/>
-            <span> 0</span>
-        </div>
-    );
-}
+  return (
+    <Link
+      to="/cart"
+      className={`cart-widget ${cart.length > 0 ? "cart-widget-active" : ""}`}
+    >
+      <TiShoppingCart className="cart-icon" />
+      <span>{totalCantidad()}</span>
+    </Link>
+  );
+};
 
 export default CartWidget;

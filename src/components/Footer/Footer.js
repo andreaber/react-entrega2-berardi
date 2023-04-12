@@ -71,16 +71,16 @@ const Footer = () => {
                   urban-kvinde@gmail.com
                 </a>
                 <div className="social_icons d-flex align-items-center gap-3 mt-4">
-                  <a className="text-white" href="/#">
+                  <a href="https://www.facebook.com" className="text-white" target="_blank" rel="noreferrer noopener">
                     <BsFacebook className="fs-4" />
                   </a>
-                  <a className="text-white" href="/#">
+                  <a href="https://www.instagram.com" className="text-white" target="_blank" rel="noreferrer noopener">
                     <BsInstagram className="fs-4" />
                   </a>
-                  <a className="text-white" href="/#">
+                  <a href="https://twitter.com" className="text-white" target="_blank" rel="noreferrer noopener">
                     <BsTwitter className="fs-4" />
                   </a>
-                  <a className="text-white" href="/#">
+                  <a href="https://www.youtube.com" className="text-white" target="_blank" rel="noreferrer noopener">
                     <BsYoutube className="fs-4" />
                   </a>
                 </div>
