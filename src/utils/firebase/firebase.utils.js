@@ -5,6 +5,9 @@ import {
   signInWithPopup, 
   GoogleAuthProvider, 
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
 } from 'firebase/auth'
 import {
   getFirestore,
@@ -34,7 +37,7 @@ googleProvider.setCustomParameters({
 })
 
 export const auth = getAuth()
-export const signInWhitGooglePopup = () => 
+export const signInWithGooglePopup = () => 
   signInWithPopup(auth, googleProvider)
 export const signInWithGoogleRedirect = () => 
   signInWithRedirect(auth, googleProvider)
@@ -54,17 +57,17 @@ export const createUserDocumentFromAuth = async (
   // verifico si existen datos del usuario
   if(!userSnapshot.exists()) {
     const { displayName, email } = userAuth
-    const createAt = new Date()
+    const createdAt = new Date()
     // si no existen, lo configuro dentro de la db
     try {
       await setDoc(userDocRef, {
         displayName,
         email,
-        createAt,
+        createdAt,
         ...additionalInformation,
       })
     } catch (err) {
-      console.log('error al crear el usuario', err.message)
+      console.log('Error al crear el usuario', err.message)
     }
   }
 
@@ -77,3 +80,15 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await createUserWithEmailAndPassword(auth, email, password)
 }
+
+export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+  if (!email || !password) return;
+
+  return await signInWithEmailAndPassword(auth, email, password)
+}
+
+export const signOutUser = async () => await signOut(auth);
+
+export const onAuthStateChangedListener = (callback) => 
+  onAuthStateChanged(auth, callback)
+
