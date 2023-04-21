@@ -38,16 +38,6 @@ const SignInForm = () => {
       resetFormFields();
     } catch (err) {
       console.log('inicio de sesión de usuario fallido', err);
-      // switch (err.code) {
-      //   case "auth/wrong-password":
-      //     alert("Contraseña incorrecta para el correo electrónico");
-      //     break;
-      //   case "auth/user-not-found":
-      //     alert("Ningún usuario asociado con este correo electrónico");
-      //     break;
-      //   default:
-      //     console.log(err);
-      // }
     }
   };
 

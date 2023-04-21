@@ -11,26 +11,26 @@ const Checkout = () => {
 
   return (
     <div className="checkout-container">
-      <div className="ckeckout-header">
+      <div className="checkout-header">
         <div className="header-block">
-          <span>Product</span>
+          <span>Producto</span>
         </div>
         <div className="header-block">
-          <span>Description</span>
+          <span>Descripción</span>
         </div>
         <div className="header-block">
-          <span>Quantity</span>
+          <span>Cantidad</span>
         </div>
         <div className="header-block">
-          <span>Price</span>
+          <span>Precio</span>
         </div>
-        <div className="header-block">      
-          <span>Remove</span>
+        <div className="header-block">
+          <span>Eliminar</span>
         </div>
       </div>
-      {cartItems.map((cartItem) => 
+      {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
-      )}
+      ))}
       <span className="total">Total: ${cartTotal}</span>
     </div>
   );

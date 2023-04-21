@@ -1,7 +1,5 @@
 import { createContext, useState, useEffect } from "react";
 
-
-
 const addCartItem = (cartItems, productToAdd) => {
   // encontrar si cartItems contiene productToAdd
   const existingCartItem = cartItems.find(
@@ -29,7 +27,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
 
   // verificar si la cantidad es igual a 1; si lo es, eliminar ese artículo del carrito
   if (existingCartItem.quantity === 1) {
-    return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id);
+    return cartItems.filter((cartItem) => cartItem.id !== cartItemToRemove.id);
   }
 
   // devolver cartItems con artículo de carrito coincidente con cantidad reducida
@@ -40,8 +38,8 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
   );
 };
 
-const clearCartItem = (cartItems, cartItemToClear) => cartItems.filter(cartItem => cartItem.id !== cartItemToClear.id);
-
+const clearCartItem = (cartItems, cartItemToClear) =>
+  cartItems.filter((cartItem) => cartItem.id !== cartItemToClear.id);
 
 export const CartContext = createContext({
   isCartOpen: false,
@@ -62,23 +60,19 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     const newCartCount = cartItems.reduce(
-      (total, cartItem) => total + cartItem.quantity, 
+      (total, cartItem) => total + cartItem.quantity,
       0
-    )
+    );
     setCartCount(newCartCount);
   }, [cartItems]);
 
-
-
   useEffect(() => {
     const newCartTotal = cartItems.reduce(
-      (total, cartItem) => total + cartItem.quantity * cartItem.price, 
+      (total, cartItem) => total + cartItem.quantity * cartItem.price,
       0
     );
     setCartTotal(newCartTotal);
   }, [cartItems]);
-
-
 
   const addItemToCart = (productToAdd) => {
     setCartItems(addCartItem(cartItems, productToAdd));
@@ -86,20 +80,20 @@ export const CartProvider = ({ children }) => {
 
   const removeItemToCart = (cartItemToRemove) => {
     setCartItems(removeCartItem(cartItems, cartItemToRemove));
-  }
+  };
 
   const clearItemFromCart = (cartItemToClear) => {
     setCartItems(clearCartItem(cartItems, cartItemToClear));
-  }
+  };
 
-  const value = { 
-    isCartOpen, 
-    setIsCartOpen, 
-    addItemToCart, 
+  const value = {
+    isCartOpen,
+    setIsCartOpen,
+    addItemToCart,
     removeItemToCart,
     clearItemFromCart,
-    cartItems, 
-    cartCount, 
+    cartItems,
+    cartCount,
     cartTotal,
   };
 

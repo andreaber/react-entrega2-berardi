@@ -28,6 +28,10 @@ const Navigation = () => {
             SHOP
           </Link>
 
+          <Link className="nav-link" to='/contact'>
+            CONTACTO
+          </Link>
+
           {currentUser ? (
             <span className='nav-link' onClick={signOutUser}>
               CERRAR SESIÓN
