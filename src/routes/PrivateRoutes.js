@@ -6,7 +6,6 @@ import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailCon
 import Cart from "../components/Cart/Cart"
 import Contacto from '../components/Contacto/Contacto'
 import Checkout from "../components/Checkout/Checkout"
-import Footer from "../components/Footer/Footer"
 // import Error404 from "../Error404/Error404"
 
 
@@ -27,7 +26,6 @@ const PrivateRoutes = () => {
         {/*<Route path='*' element={ <Error404 /> } /> */}
       </Routes>
 
-      <Footer />
     </Fragment>
   )
 }
