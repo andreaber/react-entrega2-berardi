@@ -1,5 +1,5 @@
 {
-  "name": "clase-coder",
+  "name": "urban-kvinde",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,15 +7,18 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
-    "firebase": "^9.19.1",
+    "firebase": "^9.22.0",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.7.2",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
-    "react-router-dom": "^6.9.0",
+    "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
-    "sass": "^1.59.3",
-    "web-vitals": "^2.1.4"
+    "sass": "^1.62.1",
+    "sweetalert2": "^11.7.5",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
