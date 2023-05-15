@@ -1,13 +1,12 @@
 import { CiFacebook, CiTwitter, CiYoutube, CiInstagram } from "react-icons/ci";
 import './Footer.scss'
-import { Fragment } from "react";
 
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (  
-    <Fragment>
+    <div>
       <footer>
         <div className="footer-container">
 
@@ -55,7 +54,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-    </Fragment>
+    </div>
   );
 }
 
